@@ -17,3 +17,16 @@ rasdial $vpnName (Read-Host -Prompt "Enter VPN Username") (Read-Host -Prompt "En
 }
 }
 ConnectVPN
+
+function DomainSetup {
+    param (
+        $DomainSetup = Read-Host -Prompt "Do you want to add this device to a domain?"
+        if ($DomainSetup -eq [Yy]) {
+
+            Add-Computer -DomainName (Read-Host -Prompt "Enter Domain Name") -DomainCredential (Read-Host -Prompt "Enter Domain Username")
+            
+        }
+        DomainSetup
+    )
+    
+}
