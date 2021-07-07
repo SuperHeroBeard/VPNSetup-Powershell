@@ -7,6 +7,7 @@ $VPNConnection = Get-VpnConnection | Select-Object
 function VPNTunnel {
     Add-VPNConnectionRoute -ConnectionName $VPNConnection.Name -DestinationPrefix (Read-Host -Prompt "Enter Subnet Prefix i.e 10.10.0.0/24")
 }
+VPNTunnel
 
 function ConnectVPN {
 $vpnName = $VPNConnection.Name
